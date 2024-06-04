@@ -1,0 +1,322 @@
+* {
+    --color-light: #fafafa;
+    --color-dark: #000000;
+    --color-blue: #007c97;
+    --transition: .5s;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+    line-height: 1.5;
+    background-color: var(--color-light);
+}
+
+body {
+    font-size: 1.6rem;
+}
+
+#mouse {
+    max-width: 100%;
+}
+
+img{
+    max-width: 100%;
+}
+
+@keyframes colorBackground {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+    25% {
+        
+        filter: hue-rotate(15deg);
+    }
+    50% {
+        filter: hue-rotate(30deg);
+    }
+    75% {
+        filter: hue-rotate(15deg);
+    }
+    100% {
+        filter: hue-rotate(0deg);
+    }
+}
+
+#btn_login{
+    width: 169px; 
+    height: 44px; 
+    padding: 10px 36px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.20) 0%, rgba(217, 217, 217, 0) 100%); 
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.10); 
+    border-radius: 16px; 
+    border: 1px white solid; 
+    backdrop-filter: blur(15px); 
+    justify-content: center; 
+    align-items: center; 
+    gap: 10px; 
+    display: inline-flex
+
+
+}
+
+
+
+.hero {
+    /* mudando o position para relative, sem ele o vídeo não fica acima */
+    position: relative;
+    height: 90vh;
+    color: #fff;
+}
+
+/* Essa parte aqui é para colocar um bakground deixando o vídeo como se tivesse um linear-gradient, podem tirar se quiserem, o comentar para ver a diferença */
+.hero::before {
+    content: '';
+    /* mudando o position para ele ficar no topo do elemento pai */
+    position: absolute;
+    /* inset 0 é um shorthand para top + bottom + right + left = 0 */
+    inset: 0;
+    /* deixando o vídeo como se tivesse um linear-gradient ele ficará mais apagado */
+    background: var(--color-blue);
+    background: linear-gradient(0deg, var(--color-blue) 0%, rgba(0,0,0,0.29175420168067223) 68%);
+    z-index: -1;
+    animation: colorBackground 20s linear infinite;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    height: 100%;
+    padding: 3rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10rem;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 3rem;
+}
+
+nav ul a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.container h1 {
+    margin: 12rem 0;
+    max-width: 80%;
+    font-size: 6rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+#mouse{
+
+    margin-top: 22rem;
+
+
+}
+video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+}
+
+
+
+.sections_links {
+    min-height: 600px;
+    margin: 0 auto;
+    width: 100%;
+    background-color: var(--color-blue);
+    background: url('/vector/Vector3.svg') repeat-x;
+    background-size: auto 100%;
+    padding: 15px;
+
+    animation: colorBackground 20s linear infinite;
+
+    z-index: 1;
+    position: relative;
+    overflow: hidden;
+
+}
+
+.sections_links h1 {
+    padding: 6rem;
+    margin-top: 1rem;
+    margin-bottom: 10px;
+    text-align: center;
+    font-weight: 400;
+    color: var(--color-light);
+    font-size: 200%;
+}
+
+.sections_links h3 {
+    padding: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 10px;
+    text-align: center;
+    font-weight: 400;
+    color: var(--color-light);
+}
+
+.section-list {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-section {
+    width: 28%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+    padding: 20px;
+    box-shadow: 1px 1px 20px rgba(0, 44, 54, 0.6);
+    transition: scale .7s;
+    border-radius: 7px;
+}
+
+.card-section:hover {
+    scale: 1.1;
+}
+#b1{    
+    box-sizing: border-box;
+    position: absolute;
+    /* width: 505px;
+    height: 505px; */
+    left: 0px;
+    display: none;
+}
+.container_solucao>h4 {
+    background-image: element(b1);
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 5rem;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--color-blue);
+    font-size: 36px;
+    font-weight: 400;
+}
+
+.solucao_contend {
+    display: flex;
+    flex-direction: row;
+
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 80%;
+    gap: 2rem;
+}
+
+
+.text_content {
+    width: 55%;
+    padding: 1rem 12rem;
+    align-items: flex-start;
+}
+
+.img_content {
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    padding: 1rem;
+}
+
+
+.img_content>.solution_img_02 {
+    width: 100%;
+    height: 30%;
+}
+.solution_img_01 img {
+    max-width: 100%; 
+    max-height: 100%;
+    object-fit: cover; 
+}
+.solution_img_02{
+    
+    /* overflow: hidden; */
+    align-items: center;
+    justify-content: center;
+}
+.solution_img_02 img {
+    max-width: 100%; 
+    max-height: 100%;
+    object-fit: cover; 
+}
+
+
+
+
+
+.buble{
+    display: flex;
+}
+
+.buble>#buble1{
+    width: 411px; 
+    height: 411px; 
+    left: 833px; 
+    top: 4557px; 
+    position: absolute; 
+    background: #C4C4C4; 
+    border-radius: 100%;
+    align-items: center;
+    justify-content: center; 
+    overflow: hidden;
+    
+}
+#buble1>img {
+    max-width: 100%; 
+    max-height: 100%;
+    object-fit: cover; 
+}
+.buble>#buble2{
+    width: 268px; 
+    height: 268px; 
+    left: 1038px; 
+    top: 4810px; 
+    position: absolute; 
+    background: #C4C4C4; 
+    border-radius: 100%; 
+    border: 15px #FAFAFA solid
+}
+.buble>#buble3{
+    width: 205px;
+    height: 205px;
+    left: 890px;
+    top: 4927px;
+    position: absolute;
+    background: #C4C4C4; 
+    border-radius: 100%; 
+    border: 15px #FAFAFA solid
+}

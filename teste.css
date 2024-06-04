@@ -1,0 +1,277 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: 'Figtree', sans-serif;
+    line-height: 1.5;
+}
+
+body {
+    font-size: 1.6rem;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+.hero {
+    position: relative;
+    height: 90vh;
+    color: #fff;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgb(0,124,151);
+    background: linear-gradient(0deg, rgba(0,124,151,1) 24%, rgba(0,0,0,0.29175420168067223) 79%);
+    z-index: -1;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    height: 100%;
+    padding: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5rem;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 3rem;
+}
+
+nav ul a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.container h1 {
+    margin: 5rem 0;
+    max-width: 80%;
+    font-size: 5rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+}
+
+.Rectangle1 {
+    width: 1440px;
+    height: 859px;
+    left: 0px;
+    top: 0px;
+    position: absolute;
+    background: #121212;
+}
+
+.MaskGroup {
+    width: 701px;
+    height: 883px;
+    left: 739px;
+    top: 0px;
+    position: absolute;
+}
+
+.Rectangle2 {
+    width: 701px;
+    height: 883px;
+    left: 0px;
+    top: 0px;
+    position: absolute;
+    background: #00A5A5;
+}
+
+.Image {
+    width: 834px;
+    height: 805px;
+    left: -46px;
+    top: -92px;
+    position: absolute;
+    background: #C4C4C4;
+}
+
+.Rectangle3 {
+    width: 730px;
+    height: 1062px;
+    left: -13px;
+    top: 238px;
+    position: absolute;
+    background: #1A1A1A;
+    border-radius: 75px;
+}
+
+.Titulo {
+    width: 513px;
+    height: 55px;
+    left: 92px;
+    top: 252px;
+    position: absolute;
+    color: white;
+    font-size: 46px;
+    font-family: Montserrat;
+    font-weight: 600;
+    word-wrap: break-word;
+}
+
+.Line1 {
+    width: 513px;
+    height: 0px;
+    left: 92px;
+    top: 327px;
+    position: absolute;
+    border: 1px white solid;
+}
+
+.LoremIpsumDolorSitAmetConsecteturAdipiscingElit {
+    width: 487px;
+    height: 196px;
+    left: 92px;
+    top: 359px;
+    position: absolute;
+    color: white;
+    font-size: 24px;
+    font-family: Montserrat;
+    font-weight: 500;
+    word-wrap: break-word;
+}
+
+.Group154 {
+    width: 593px;
+    height: 109px;
+    left: 77px;
+    top: 661px;
+    position: absolute;
+}
+
+.Image {
+    width: 170px;
+    height: 109px;
+    left: 0px;
+    top: 0px;
+    position: absolute;
+    background: #C4C4C4;
+}
+
+.Image {
+    width: 170px;
+    height: 109px;
+    left: 211px;
+    top: 0px;
+    position: absolute;
+    background: #C4C4C4;
+}
+
+.Image {
+    width: 170px;
+    height: 109px;
+    left: 423px;
+    top: 0px;
+    position: absolute;
+    background: #C4C4C4;
+}
+
+.Group155 {
+    width: 225px;
+    height: 216px;
+    left: 947px;
+    top: 693px;
+    position: absolute;
+}
+
+.Image {
+    width: 225px;
+    height: 216px;
+    left: 0px;
+    top: 0px;
+    position: absolute;
+    background: linear-gradient(0deg, #C4C4C4 0%, #C4C4C4 100%), linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.20) 72%, rgba(0, 0, 0, 0.20) 90%, rgba(0, 0, 0, 0.20) 100%);
+    border-radius: 17px;
+}
+
+.PBlicoAlvo {
+    width: 190px;
+    left: 17px;
+    top: 140px;
+    position: absolute;
+    color: white;
+    font-size: 30px;
+    font-family: Montserrat;
+    font-weight: 400;
+    word-wrap: break-word;
+}
+
+.Tecnologias {
+    width: 179px;
+    left: 24px;
+    top: 145px;
+    position: absolute;
+    color: white;
+    font-size: 30px;
+    font-family: Montserrat;
+    font-weight: 400;
+    word-wrap: break-word;
+}
+
+.BenefCios {
+    width: 156px;
+    left: 35px;
+    top: 140px;
+    position: absolute;
+    color: white;
+    font-size: 30px;
+    font-family: Montserrat;
+    font-weight: 400;
+    word-wrap: break-word;
+}
+
+.Objetivos {
+    width: 146px;
+    left: 39px;
+    top: 145px;
+    position: absolute;
+    color: white;
+    font-size: 30px;
+    font-family: Montserrat;
+    font-weight: 400;
+    word-wrap: break-word;
+}
+
+.Sobre {
+    width: 96px;
+    left: 64px;
+    top: 145px;
+    position: absolute;
+    color: white;
+    font-size: 30px;
+    font-family: Montserrat;
+    font-weight: 400;
+    word-wrap: break-word;
+}
