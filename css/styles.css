@@ -1,10 +1,22 @@
-* {
+/* Reset */
+body, h1, h2, h3, h4, p, ul, li, a {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+}
+
+:root {
     --color-light: #fafafa;
     --color-dark: #000000;
     --color-dark-grey: #4B4B4B;
     --color-blue: #007c97;
     --color-bluedark: #00404e;
     --transition: .5s;
+}
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -22,123 +34,78 @@ body {
     font-size: 1.6rem;
 }
 
-#mouse {
-    max-width: 100%;
+@keyframes mousemove {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(50%);
+    }
+    100% {
+        transform: translateY(0);
+    }
 }
 
-img {
+@keyframes colorBackground {
+    0% { filter: hue-rotate(0deg); }
+    25% { filter: hue-rotate(15deg); }
+    50% { filter: hue-rotate(30deg); }
+    75% { filter: hue-rotate(15deg); }
+    100% { filter: hue-rotate(0deg); }
+}    
+
+img, #mouse {
     max-width: 100%;
     display: block;
 }
 
-@keyframes colorBackground {
-    0% {
-        filter: hue-rotate(0deg);
-    }
-    25% {
-        filter: hue-rotate(15deg);
-    }
-    50% {
-        filter: hue-rotate(30deg);
-    }
-    75% {
-        filter: hue-rotate(15deg);
-    }
-    100% {
-        filter: hue-rotate(0deg);
-    }
-}
 a:hover {
-    transform: scale(1.1); /* Aumentando o tamanho do link em 10% ao passar o mouse */
+    transform: scale(1.1);
 }
 
 #btn_login {
-    width: 169px; 
+    width: 169px;
     height: 44px;
-    margin: 0 5rem 0 0; 
+    margin: 0 5rem 0 0;
     padding: 10px 36px;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.20) 0%, rgba(217, 217, 217, 0) 100%); 
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.10); 
-    border-radius: 16px; 
-    border: 1px white solid; 
-    backdrop-filter: blur(15px); 
-    justify-content: center; 
-    align-items: center; 
-    gap: 10px; 
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.20) 0%, rgba(217, 217, 217, 0) 100%);
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.10);
+    border-radius: 16px;
+    border: 1px solid white;
+    backdrop-filter: blur(15px);
     display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }
 
 .hero {
-    /* mudando o position para relative, sem ele o vídeo não fica acima */
     position: relative;
     height: 90vh;
     color: #fff;
 }
 
-/* Essa parte aqui é para colocar um bakground deixando o vídeo como se tivesse um linear-gradient, podem tirar se quiserem, o comentar para ver a diferença */
+.hero h2 {
+    font-size: 3rem;
+    font-weight: 500;
+}
+
 .hero::before {
     content: '';
-    /* mudando o position para ele ficar no topo do elemento pai */
     position: absolute;
-    /* inset 0 é um shorthand para top + bottom + right + left = 0 */
     inset: 0;
-    /* deixando o vídeo como se tivesse um linear-gradient ele ficará mais apagado */
-    background: var(--color-blue);
     background: linear-gradient(0deg, var(--color-blue) 0%, rgba(0,0,0,0.29175420168067223) 68%);
     z-index: -1;
     animation: colorBackground 20s linear infinite;
 }
 
 .container {
-    width: 100%;
-    margin: 0 auto;
-    height: 100%;
-    padding: 3rem 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
+    height: 100dvh;
+    width: 90%;
+    margin: auto;
 }
 
-header {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10rem;
-    & h3{
-        margin: 0 0 0 10rem; 
-    }
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    gap: 3rem;
-}
-
-nav ul a {
-    text-decoration: none;
-    color: #fff;
-}
-
-.container h1 {
-    margin: 12rem 0;
-    max-width: 80%;
-    font-size: 6rem;
-    font-weight: 500;
-    line-height: 1.2;
-}
-
-#mouse{
-
-    margin-top: 22rem;
-
-
-}
-video {
+.hero video {
     position: absolute;
     top: 0;
     left: 0;
@@ -148,36 +115,97 @@ video {
     z-index: -2;
 }
 
+.hero .container {
+    width: 100%;
+    margin: 0 auto;
+    height: 100%;
+    padding: 3rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-items: space-between;
+    align-items: center;
+    position: relative;
+}
 
-/*botões das seções*/
-#sections_links {
+header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    margin-bottom: 10rem;
+}
+
+header h3 {
+    margin: 0 0 0 10rem;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 3rem;
+}
+
+header nav ul li {
+    list-style: none;
+}
+
+nav ul a {
+    text-decoration: none;
+    color: #fff;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+#mouselimit{
+    display: flex;
+    height: inherit;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+#mouse {
+    animation: mousemove 3s infinite;
+}
+
+.titles {
+    margin: 1rem 0;
+    max-width: 80%;
+    font-size: 6rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+#summary {
     min-height: 600px;
     margin: 0 auto;
     width: 100%;
-    background-color: var(--color-blue);
     background: url('/vector/Vector3.svg') repeat-x;
     background-size: auto 100%;
     padding: 15px;
-
     animation: colorBackground 20s linear infinite;
-
     z-index: 1;
     position: relative;
     overflow: hidden;
-
 }
 
-#sections_links h1 {
-    padding: 6rem;
-    margin-top: 1rem;
-    margin-bottom: 10px;
-    text-align: center;
+#summary h1 {
+    max-width: none;
     font-weight: 400;
-    color: var(--color-light);
     font-size: 200%;
+    text-align: center;
+    padding: 6rem;
+    margin-bottom: 10px;
+    margin-top: 1rem;
+    color: var(--color-light);
 }
 
-#sections_links h3 {
+#summary h3 {
     padding: 1rem;
     margin-top: 1rem;
     margin-bottom: 10px;
@@ -194,6 +222,7 @@ video {
     gap: 30px;
     align-items: center;
     justify-content: center;
+    justify-content: space-around;
 }
 
 .card-section {
@@ -204,169 +233,100 @@ video {
     justify-content: center;
     text-align: center;
     gap: 10px;
-    padding: 20px;
+    margin: 0.5em;
+    padding: 1em;
     box-shadow: 1px 1px 20px rgba(0, 44, 54, 0.6);
-    transition: scale .7s;
+    transition: transform .7s;
     border-radius: 7px;
 }
 
-/*fim links*/
 
- .card-section:hover {
-    scale: 1.1;
-}
-#b1{    
-    box-sizing: border-box;
-    position: absolute;
-    /* width: 505px;
-    height: 505px; */
-    left: 0px;
-    display: none;
+h2 {
+    margin: 0.2em 0;
 }
 
-/* header section */
-.t1{
+#solution{
+    height: 100dvh;
     width: 80%;
-    margin: 0 auto;
-    margin-bottom: 4rem;
-    padding: 3rem;
+}
+
+#solution > .section-title {
+    display: flex;
+    height: 20dvb;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    color: var(--color-blue);
+}
+
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 1dvh;
+}
+
+.content > .text-content {
+    height: 50dvh;
+    width: 60%;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    color: var(--color-blue);
-    font-size: 36px;
-    font-weight: 400;
+    flex: 1;
+    padding: 1%;
+    gap: 1rem;
+    justify-content: center;
 }
 
 
-/* Container solução */
-.contend {
-    padding: 2rem;
+.link {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin: 0 auto;
-    width: 80%;
-    gap: 2rem;
-}
-
-.text_content {
-    width: 55%;
-    height: auto;
-    padding: 1rem 12rem;
-    justify-content: flex-start;
-}
-.text_content P {
-    margin-bottom: 4rem;
-}
-
-.text_content a {
+    margin: 1dvh;
+    width: 35%;
     padding: 8px 60px; 
-    border-radius: 16px; 
-    border: 0.8rem solid var(--color-blue); 
+    border: none;
+    border-radius: 18px; 
     text-decoration: none; 
+    justify-content: center;
     background-color: #007c97; 
     color: var(--color-light); 
-
-    transition: transform 0.3s ease, 
-    background-color 0.3s ease, 
-    color 0.3s ease;
 }
 
-.text_content a:hover {
-    transform: scale(1.5); 
+.link:hover {
+    scale: 1.1;
     background-color: var(--color-bluedark); 
+    border: none;
 }
 
-.subtitulo{
-    margin: 0.1rem 0 1rem 0;
-    color: var(--color-blue);
-    font-weight: 400;
+.img-content {
+    flex: 1;
+    max-width: 40%;
+    text-align: center;
 }
 
-.img_content {
-   
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 45%;
-    padding: 2rem 7rem;
-    
+.img-content img {
     max-width: 100%;
-    max-height: 500px; /* Definindo a altura máxima desejada */
-    object-fit: cover;
-    position: relative;   
-   
-
-
+    border-radius: 5px;
 }
 
-#solution_img_01{
-    height: 100%;
-    width: 60%;
-    object-fit: cover; 
-    overflow: hidden;
-    border-radius: 7px;
-}
-
-#solution_img_01 img{
-    height: 100%;
-    object-fit: cover;
-    border-radius: 6px; 
-}
-
-#solution_img_02{
-    margin-top: 1rem;
-    max-width: 60%; 
-    max-height: 30%;
-    object-fit: cover; 
-    overflow: hidden;
-    border-radius: 7px;
-}
-#solution_img_02 img{
-    max-width: 100%; 
-    object-fit: cover;
-    border-radius: 6px; 
-}
-/* fim solução */
-
-/* tech */
-
-#tech_title{
-    margin: 0 0 4rem 0;
-    font-size: 5rem;
-}
-
-
-
-/* carrossel */
 .carousel {
     position: relative;
-    margin-bottom: 3rem;
-    width: 70%;
-    height: 80%; /* Reduzindo a altura para 400px */
-    max-width: 900px;
-    max-height: 450px;
-    overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .carousel-inner {
     display: flex;
-    height: 100%;
+    overflow: hidden;
+    border-radius: 5px;
 }
 
 .carousel-item {
-    min-width: 100%;
-    transition: transform 0.5s ease;
+    flex: 1 0 100%;
+    transition: transform 0.5s ease-in-out;
 }
 
 .carousel-item img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
+    border-radius: 5px;
 }
 
 .carousel-control {
@@ -376,125 +336,39 @@ video {
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
     border: none;
-    padding: 10px;
+    padding: 0.5em;
     cursor: pointer;
-    font-size: 24px;
-    z-index: 10;
-    user-select: none;
 }
 
-.carousel-control.prev {
+.prev {
     left: 10px;
 }
 
-.carousel-control.next {
+.next {
     right: 10px;
 }
-/* fim carrossel */
 
-/* inicio tech_circles */
 .circle-container {
-    margin: 10 auto;
     display: flex;
-    flex-wrap: wrap; /* Permitir que os círculos sejam escalonados em bloco */
-    justify-content: center; /* Centralizar horizontalmente */
-    align-items: center; /* Centralizar verticalmente */
-    width: 100%; /* Ocupando toda a largura disponível */
-    max-width: 800px; /* Definindo uma largura máxima para evitar que se espalhem demais em telas maiores */
-    margin: 0 auto; /* Centralizando horizontalmente */
-}
-.circle:nth-child(1) {
-    border: 6px solid var(--color-blue);
-    
+    justify-content: space-around;
+    margin: 2em 0;
 }
 
 .circle {
-    width: calc(25% - 20px); /* Largura dinâmica para ajustar quatro círculos em uma linha */
-    height: calc(25% - 20px); /* Altura igual à largura para criar um círculo */
-    margin: 0px; /* Espaçamento entre os círculos */
-    border: 6px solid #4B4B4B; /* Adicionando uma borda cinza */
-    border-radius: 50%; /* Tornando o elemento circular */
+    width: 100px;
+    height: 100px;
+    background-color: #e2e2e2;
+    border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center; /* Alinhando o texto ao centro */
+    text-align: center;
+    padding: 1em;
 }
 
-.circle h4 {
-    padding: 60px;
-    margin: 1px; /* Removendo margem padrão do h4 */
-}
-/* fim tech_circles */
-
-/* objetivos */
-#object_section {
-    margin-top: 4rem;
-    width: 100%;
-    height:70vh;   
-    background-image: linear-gradient( to top, rgba(0, 0, 0, 1), 
-    rgba(0, 0, 0, .2)),
-    url(/img/christoffer-engstrom-wc9avd2RaN0-unsplash.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 50%;
-    
-    /* configurando tipo hero */
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: var(--color-light);  
-
-    & h2 {
-        font-size: clamp(20px, 4vw, 40px);
-        
-    }
-    & h4{
-        font-size: 36px;
-        font-weight: 400;
-        }
-}
-
-
-/* inicio target */
-#target_img_01 {
-    height: 40vh; /* Definindo a altura do contêiner principal */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative; /* Adicionando posição relativa para o contêiner */
-}
-
-
-/* Bolha principal */
-.buble {
-    width: 60%; /* Ajuste a porcentagem conforme necessário para caber no contêiner */
-    padding-bottom: 60%; /* Isso mantém a proporção de 1:1 */
-    border-radius: 50%; /* Tornando a bolha circular */
-    overflow: hidden; /* Garantindo que a imagem dentro da bolha seja mascarada */
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(224, 6, 6); /* Adicione um fundo branco para visualizar o círculo */
-}
-
-/* Imagem dentro da bolha */
-#buble1 {
-    margin-top: 4rem;
-    width: 100%;
-    height:70vh;   
-    background-image: linear-gradient( to top, rgba(0, 0, 0, 1), 
-    rgba(0, 0, 0, .2)),
-    url(/img/christoffer-engstrom-wc9avd2RaN0-unsplash.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 50%;
-}
-
-
-
-
-
-
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+} 
