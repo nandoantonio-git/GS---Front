@@ -403,7 +403,6 @@ h2 {
     }
 
 }
-
 .carousel {
     display: flex;
     justify-content: center;
@@ -437,6 +436,7 @@ h2 {
     margin: 2em 0;
     max-width: fit-content;
     gap: 1em;
+    justify-content: space-between;
 }
                             
 .circle {
