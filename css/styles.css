@@ -445,6 +445,56 @@ left: 890px;
 top: 4927px;
 background: #C4C4C4;
 border: 15px solid #FAFAFA;
+#prev {
+    left: 12%;
+}
+
+#next {
+    right: 12%;
+}
+
+#objectives {
+    background-color: #333;
+}
+#bolhas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    gap: 1rem;
+    margin: 2em 0;
+}
+
+#bolhas> #b1 {
+position: absolute;
+width: 411px;
+height: 411px;
+left: 833px;
+top: 4557px;
+background: #C4C4C4;
+}
+
+#bolhas>#b2 {
+    box-sizing: border-box;
+    position: absolute;
+    width: 268px;
+    height: 268px;
+    left: 1038px;
+    top: 4810px;
+    background: #C4C4C4;
+    border: 15px solid #FAFAFA;
+    box-sizing: border-box;
+}
+
+#bolhas>#b3 {
+box-sizing: border-box;
+position: absolute;
+width: 205px;
+height: 205px;
+left: 890px;
+top: 4927px;
+background: #C4C4C4;
+border: 15px solid #FAFAFA;
 }
 
 .circle-container {
