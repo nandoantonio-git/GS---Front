@@ -53,6 +53,28 @@ body {
     }
 }
 
+@keyframes slide {
+    0%{
+        transform: translateX(0%);
+    }
+    16.666%{
+        transform: translateX(-100%);
+        }
+    33.333%{
+        transform: translateX(-200%);
+    }
+    49.99%{
+        transform: translateX(-300%);
+    }
+    66.666% {
+        transform: translateX(-400%);
+    }
+    83.333%, 100% {
+        transform: translateX(-500%);
+    }
+    
+}
+
 @keyframes textpop {
     0% {
         transform: translateY(0);
@@ -385,53 +407,58 @@ h2 {
 .carousel {
     display: flex;
     justify-content: center;
-    align-items: center;
+    overflow: hidden;
     position: relative;
+    width: 90dvh;
     max-width: 100%;
     margin: 20px 0;
 }
-
+    
 .carousel-inner {
     display: flex;
-    overflow-x: scroll;
-    width: 90dvh;
-    height: 50dvh;
-    border-radius: 1rem;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
+    animation: slide 20s infinite;
+    width: 300%;
 }
 
 .carousel-item {
-    scroll-snap-align: start;
-    flex: 0 0 100%;
+    flex: 1 0 100%;
     max-width: 100%;
     transition: transform 0.5s ease-in-out;
-    }
-    
+}
+
 .carousel-item img {
     max-height: 100%;
-    width: 100%;
-    border-radius: 5px;
+    border-radius: 1rem;
 }
 
-.bcar {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 0.5em 1em;
+.circle-container {
+    position: relative;
+    display: flex;
+    margin: 2em 0;
+    max-width: fit-content;
+    gap: 1em;
+}
+                            
+.circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1em;
+    box-sizing: border-box;
+    border: 0.5dvh solid #4B4B4B;
     cursor: pointer;
-    z-index: 1;
 }
 
-#prev {
-    left: 12%;
-}
-
-#next {
-    right: 12%;
+.circle.active, .circle:hover {
+    scale: 1.1;
+    border: 0.8dvh solid var(--bullet-color);
+    color: var(--color-blue);
+    transition: scale .7s;
+    animation: textpop 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
 /* ---------------------------------------------Objetivo--------------------------------------------- */
@@ -543,40 +570,11 @@ border-width: 10px;
 } */
                         
 /* -------------------------------------------Fim - Objetivo------------------------------------------- */
-.circle-container {
-    position: relative;
-    display: flex;
-    margin: 2em 0;
-    max-width: fit-content;
-    gap: 1em;
-}
-                            
-.circle {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 1em;
-    box-sizing: border-box;
-    border: 0.8dvh solid #4B4B4B;
-
-}
-
-.circle:hover {
-    scale: 1.1;
-    border: 0.8dvh solid var(--bullet-color);
-    color: var(--color-blue);
-    transition: scale .7s;
-    animation: textpop 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-}
 
 /* ---------------------------------------------Benefícios--------------------------------------------- */
 #benefits {
     height: 100dvh;
-    width: 60%;
+    width: 80%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -584,9 +582,16 @@ border-width: 10px;
     padding: 2rem;
 }
 
+#benefit-imgs{
+    height: 40%;
+    width: 100%;
+    display: flex;
+    padding: 0 5rem;
+    justify-content: center;
+}
 
 #benefit-imgs img {
-    width: 100%;
+    max-height: 100%;
     border-radius: 15px;
 }
 
@@ -594,11 +599,18 @@ border-width: 10px;
     width: 100%;
     padding: 1rem 4rem;
 }
+.list-section ul li:hover {
+    scale: 1.1;
+    border-bottom: 0.3dvh solid var(--bullet-color);
+    color: var(--color-blue);
+    transition: scale .7s;
+    animation: textpop 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
 /* ------------------------------------------Fim - Benefícios------------------------------------------ */
 /* ---------------------------------------------Dia-a-Dia--------------------------------------------- */
 #content-daily {
-    position: relative;
-    width: 100%;
+    width: 80%;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -628,7 +640,7 @@ border-width: 10px;
 }
 
 .list-section {
-    width: 35%;
+    width: 50%;
     border-top: 1px solid var(--color-grey);
     padding: 2rem;
 }
@@ -660,6 +672,7 @@ border-width: 10px;
     border-top: 1px solid var(--color-grey);
 }
 
+
 .list-section ul li::before {
     content: '';
     position: absolute;
@@ -670,12 +683,15 @@ border-width: 10px;
     /* Tamanho do bullet */
     height: 30px;
     /* Tamanho do bullet */
-    border: 2px solid var(--bullet-color, #000);
+    border: 2px solid var(--color-dark);
     /* Cor do bullet personalizável */
     border-radius: 50%;
     /* Torna o bullet circular */
     background-color: transparent;
     /* Garantindo que o interior do bullet seja transparente */
+}
+.list-section ul li:hover::before {
+    border: 0.3dvh solid var(--bullet-color); /* Muda a borda do bullet ao passar o mouse */
 }
 
 .text-beneficios {
