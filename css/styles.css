@@ -158,6 +158,7 @@ a:hover {
 }
 
 .container {
+    display: block;
     height: 100dvh;
     width: 80%;
     margin: 0 auto;
@@ -393,40 +394,60 @@ h2 {
 /* TECH */
 #technology {
     padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    & h1 {
-        text-align: center;
-        margin: 0 auto;
-    }
-
 }
+#technology> h4 {
+    text-align: center;
+    height: 10dvh;
+}
+
+#technology>h1 {
+    height: 10dvh;
+    text-align: center;
+    margin: 0 auto;
+}
+#technology>.content{
+    max-height: 100%;
+}
+
+/* Estilos do Carrossel */
 .carousel {
     display: flex;
-    justify-content: center;
     overflow: hidden;
     position: relative;
-    width: 90dvh;
+    height: 30dvh;
+    width: 100%;
     max-width: 100%;
     margin: 20px 0;
+    justify-content: center;
 }
     
 .carousel-inner {
-    display: flex;
-    animation: slide 20s infinite;
-    width: 300%;
+    height: 100%;
+    width: 80%;
+    padding: 1rem;
+    transition: transform 0.5s ease-in-out;
+    position: relative;
 }
 
 .carousel-item {
     flex: 1 0 100%;
+    min-height: 100%;
     max-width: 100%;
-    transition: transform 0.5s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.carousel-item.active {
+    opacity: 1;
+    position: relative;
 }
 
 .carousel-item img {
-    max-height: 100%;
+    max-width: 100%;
+    max-height: 100%; /* Limita a altura máxima da imagem */
     border-radius: 1rem;
 }
 
@@ -434,11 +455,11 @@ h2 {
     position: relative;
     display: flex;
     margin: 2em 0;
-    max-width: fit-content;
+    width: 100%;
     gap: 1em;
     justify-content: space-between;
 }
-                            
+
 .circle {
     width: 100px;
     height: 100px;
@@ -619,15 +640,17 @@ border-width: 10px;
 
 
 .image-section {
-    max-width: 50%;
+    width: 40%;
     display: flex;
     text-align: center;
     margin-bottom: 1rem;
+    overflow: hidden;
 }
 
 .image-section img {
-    max-width: 60%;
+    max-height: 100%;
     height: 50dvh;
+    width: 30dvh;
     border-radius: 8px;
     margin: 0 auto;
 }
