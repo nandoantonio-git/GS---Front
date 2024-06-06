@@ -319,7 +319,7 @@ h2 {
     display: flex;
     margin: 1dvh;
     width: 35%;
-    padding: 8px 60px;
+    padding: 1dvh 2dvh;
     border: none;
     border-radius: 18px;
     text-decoration: none;
@@ -358,12 +358,14 @@ h2 {
 #API>h3 {
     background-image: url("/img/christoffer-engstrom-wc9avd2RaN0-unsplash.jpg");
     background-size: cover;
-    color: var(--color-light);
-    padding: 1rem;
     border-radius: 1dvh;
-    font-size: 1.5em;
+    display: flex;
     width: 100%;
     height: 10%;
+    align-items: center;
+    padding:  0 3rem;
+    color: var(--color-light);
+    font-size: 2em;
 }
 
 /* TECH */
@@ -391,18 +393,23 @@ h2 {
 
 .carousel-inner {
     display: flex;
-    overflow: hidden;
+    overflow-x: scroll;
     width: 90dvh;
     height: 50dvh;
-    border-radius: 5px;
+    border-radius: 1rem;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
 }
 
 .carousel-item {
-    min-width: 100%;
+    scroll-snap-align: start;
+    flex: 0 0 100%;
+    max-width: 100%;
     transition: transform 0.5s ease-in-out;
-}
-
+    }
+    
 .carousel-item img {
+    max-height: 100%;
     width: 100%;
     border-radius: 5px;
 }
@@ -427,7 +434,7 @@ h2 {
     right: 12%;
 }
 
-/* Objetivo */
+/* ---------------------------------------------Objetivo--------------------------------------------- */
 
 #objetivos_hero {
     display: flex;
@@ -438,11 +445,11 @@ h2 {
     color: var(--color-blue);
     color: var(--color-light);
 }
-
+    
 #objectives {
     background-image: linear-gradient(to top, rgba(0, 0, 0, .8),
-            rgba(0, 0, 0, .3)),
-        url(../img/christoffer-engstrom-wc9avd2RaN0-unsplash.jpg);
+    rgba(0, 0, 0, .3)),
+    url(../img/christoffer-engstrom-wc9avd2RaN0-unsplash.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     height: 80dvh;
@@ -452,18 +459,18 @@ h2 {
     text-align: center;
     color: var(--color-light);
 }
-
+        
 #obte {
     padding: 8cqmax;
     display: flex;
     justify-items: center;
     justify-content: center;
 }
-
+            
 .objetivo-content {
-    display: flex;
-    height: 80dvh;
-    width: 50%;
+display: flex;
+height: 80dvh;
+width: 50%;
 }
 
 #texttob {
@@ -472,7 +479,7 @@ h2 {
     padding: 0 14% 0;
     justify-content: space-around;
 }
-
+    
 .bolhas {
     position: relative;
     display: flex;
@@ -484,12 +491,12 @@ h2 {
     flex-direction: column;
     padding: 1%;
 }
-
+        
 .bolhas img {
     position: relative;
     border-radius: 50%;
 }
-
+    
 #b1 {
     width: 41rem;
     height: 41rem;
@@ -499,7 +506,7 @@ h2 {
     border: 15px solid #FAFAFA;
     box-sizing: border-box;
 }
-
+        
 #b2 {
     width: 26rem;
     height: 26rem;
@@ -508,7 +515,7 @@ h2 {
     background: #C4C4C4;
     box-sizing: border-box;
 }
-
+    
 #b3 {
     width: 20rem;
     height: 20rem;
@@ -517,24 +524,25 @@ h2 {
     background: #C4C4C4;
     box-sizing: border-box;
 }
-
+        
 /* @media screen and (max-width: 768px) {
-    .bolhas {
-        flex-direction: column;
-    }
+.bolhas {
+flex-direction: column;
+}
 
-    .bolhas img {
-        width: 50%;
-        height: auto;
-    }
+.bolhas img {
+width: 50%;
+height: auto;
+}
 
-    #b1, #b2, #b3 {
-        width: 100%;
-        height: auto;
-        border-width: 10px;
-    }
+#b1, #b2, #b3 {
+width: 100%;
+height: auto;
+border-width: 10px;
+}
 } */
-
+                        
+/* -------------------------------------------Fim - Objetivo------------------------------------------- */
 .circle-container {
     position: relative;
     display: flex;
@@ -542,9 +550,8 @@ h2 {
     max-width: fit-content;
     gap: 1em;
 }
-
+                            
 .circle {
-
     width: 100px;
     height: 100px;
     border-radius: 50%;
@@ -566,7 +573,7 @@ h2 {
     animation: textpop 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
-/* Benefícios */
+/* ---------------------------------------------Benefícios--------------------------------------------- */
 #benefits {
     height: 100dvh;
     width: 60%;
@@ -587,8 +594,8 @@ h2 {
     width: 100%;
     padding: 1rem 4rem;
 }
-
-/* Dia-a-Dia */
+/* ------------------------------------------Fim - Benefícios------------------------------------------ */
+/* ---------------------------------------------Dia-a-Dia--------------------------------------------- */
 #content-daily {
     position: relative;
     width: 100%;
@@ -684,11 +691,13 @@ h2 {
 
 
 }
+/* ------------------------------------------Fim - Dia-a-Dia------------------------------------------ */
 
-
+/* -----------------------------------------------footer----------------------------------------------- */
 footer {
     background-color: #333;
     color: white;
     text-align: center;
     padding: 1em 0;
 }
+/* -------------------------------------------fim do footer------------------------------------------- */
