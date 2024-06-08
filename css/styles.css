@@ -362,7 +362,6 @@ h2 {
     background-color: var(--color-blue);
     color: var(--color-light);
     transition: transform .6s;
-var(--color-light) -space: nowrap;
 }
 
 .link:hover {
@@ -395,23 +394,31 @@ var(--color-light) -space: nowrap;
 }
 
 #API-content {
-    background-image: linear-gradient(to top, rgba(0, 0, 0, .8),
-    rgba(0, 0, 0, .3)),
+    background-image: linear-gradient(to top, rgba(0, 0, 0, .5),
+    rgba(0, 0, 0, .1)),
     url(../img/christoffer-engstrom-wc9avd2RaN0-unsplash.jpg);
     background-size: cover;
-    border-radius: 1dvh;
+    border-radius: 0.6rem;
+
     display: flex;
     flex-direction: column;
+
     max-width: 50%;
     height: 20%;
-    padding: 1rem 3rem;
+
+    padding: 1rem 1.6rem;
+
     overflow: hidden;
+
     color: var(--color-light);
-    font-size: 2em;
+
+    & h3 {
+        font-weight: lighter;
+    }
 
     & p {
         align-self: center;
-        font-size: clamp(1.5rem, 2.5vw, 1.8rem);
+        font-size: 1.2rem;
         color: var(--color-light);
     }
 }
