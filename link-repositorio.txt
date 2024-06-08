@@ -1,0 +1,4 @@
+https://github.com/nandoantonio-git/GS---Front
+
+(obs: o repo de front foi usado pra web-dev também, o código de web-dev está numa branch paralela a master, por-favor olhe ela pra avaliar)
+(o prof de front não permitiu js nenhum na entrega dele, por isso essa separação)
