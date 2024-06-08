@@ -30,3 +30,18 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 	attribution:
 		'&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
 }).addTo(map);
+
+document.getElementById('btn-delete').addEventListener('click', function () {
+	alert('Ponto deletado com sucesso!');
+});
+
+document.getElementById('btn-add').addEventListener('click', function () {
+	alert('Ponto adicionado com sucesso!');
+});
+
+function validateInput(input) {
+	if (/\d/.test(input.value)) {
+		alert('Números não são permitidos.');
+		input.value = input.value.replace(/[0-9]/g, '');
+	}
+}

@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fc441e0c-c52b-4b91-8f08-649fbb087cce" name="Changes" comment="step" />
+    <list default="true" id="fc441e0c-c52b-4b91-8f08-649fbb087cce" name="Changes" comment="step">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.vite/deps/_metadata.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.vite/deps/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.vite/deps_temp_825b8ef9/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.vite/deps_temp_d8fea8c0/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,7 +43,7 @@
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "JavaScript Debug.index.html.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "webdev",
     "ignore.virus.scanning.warn.message": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.stylelint": "true",
@@ -87,6 +95,7 @@
       <workItem from="1717810673606" duration="55000" />
       <workItem from="1717810733427" duration="66000" />
       <workItem from="1717810822312" duration="659000" />
+      <workItem from="1717811777543" duration="1189000" />
     </task>
     <task id="LOCAL-00001" summary="footer tamanho, cor e layout correto, closes #3">
       <option name="closed" value="true" />
