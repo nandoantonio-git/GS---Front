@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interface Similar ao Google Maps</title>
+    <link rel="stylesheet" href="API_style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""></script>
+
+</head>
+<body>
+    <div class="container">
+        <div id="principal" class="principal">
+            <div class="pesquisa-container">
+                <input type="text" class="pesquisa" placeholder="Pesquisar...">
+                <div class="tags-container">
+                    <button class="tag">Botão 1</button>
+                    <button class="tag">Botão 2</button>
+                    <button class="tag">Botão 3</button>
+                    <button class="tag">Botão 4</button>
+                    <button class="tag">Botão 5</button>
+                </div>
+            </div>
+            <div class="mapa-container">
+
+                <div id="map"></div>
+            </div>
+
+            <button class="botao botao-lateral" onclick="expandSidebar()">Expandir Barra Lateral</button>
+        </div>
+        <div id="secundario" class="secundario">
+            <div class="conteudo-secundario">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+            </div>
+        </div>
+      
+    </div>
+    <script src="script_API.js"></script>
+</body>
+</html>
